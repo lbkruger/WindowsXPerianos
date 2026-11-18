@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'fonteWindows';
+    src: url("../fonts/OPTIFranklinGothic-Medium.otf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --bg: rgb(26, 37, 74);
+    --fg: rgb(48, 91, 171);
+}
+
+/* unvisited link */
+
+a {
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+aside a:hover {
+  color: lightgray;
+}
+
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+a.underline {
+    text-decoration: underline;
+}
+
+body {
+    background-color: var(--bg);
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+}
+
+header {
+    padding-bottom: 3em;
+}
+
+nav {
+    background-color: var(--fg);
+
+    border-style: solid;
+    border-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.navbar-nav {
+    margin: -0.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.colunaNav {
+    color: white
+}
+
+#logo {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar-brand {
+    display: flex;
+}
+
+.navbar-brand img {
+    height: 4em;
+    margin: auto;
+}
+
+.nav-item {
+    font-size: large;
+    margin: auto;
+}
+
+.navbar-brand p {
+    font-family: "fonteWindows";
+    color: white;
+    margin-bottom: 0px;
+    margin: auto;
+    margin-left: 0.5em;
+    font-size: x-large;
+}
+
+nav .inline {
+    display: flex;
+
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    button {
+        border: solid white 2px;
+        border-radius: 15px;
+        margin-left: auto;
+        width: 4em;
+    }
+}
+
+.navbar-toggler {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+}
+
+.navbar-toggler-icon {
+    background-image: url(../img/hamburger.svg);
+    width: 2em;
+}
+
+.login {
+    display: grid;
+    place-items: center;
+
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.login img {
+    height: 2.5em;
+}
+
+#linkAside {
+    display: inline-flex;
+}
+
+#linkAside img {
+    height: 1.5em;
+    margin: auto;
+    margin-right: 0.5em;
+}
+
+aside {
+    border-style: solid;
+    border-radius: 15px;
+    background-color: #305BAB;
+    padding: 1%;
+    margin-bottom: 3em;
+}
+
+.offcanvas-start {
+    border-style: none;
+    /*evitar criar duas bordas*/
+}
+
+#ol1 {
+    padding-top: 1.5em;
+}
+
+aside li {
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 0.75em;
+}
+
+.offcanvas-title {
+    color: white;
+}
+
+.btn-close {
+    filter: invert(100%);
+    /*inverte a cor do botao para branco*/
+}
+
+h1 {
+    display: grid;
+    align-items: center;
+
+    font-size: 58pt;
+
+    width: auto;
+    height: 500px;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+main {
+    margin: auto;
+}
+
+main img {
+    width: auto;
+}
+
+main p {
+    text-align: justify;
+    text-indent: 3em;
+    line-height: 1.5;
+    font-size: 12pt;
+    margin-bottom: 0%;
+}
+
+.row h3 {
+    margin-top: 1.5em;
+}
+
+.list-group-item {
+    background-color: var(--fg);
+}
+
+.list-group-item-action:not(.active):hover {
+    background-color: rgb(114, 153, 224);
+}
+
+form input,
+form button {
+    margin: auto;
+    padding: 0.25em;
+    border-style: hidden;
+    border-radius: 0.5em;
+}
+
+form button {
+    background-color: var(--fg);
+    color: white;
+    border-style: solid;
+    border-color: white;
+}
+
+#buscar img {
+    height: 1.2em;
+}
+
+.contato article img {
+    height: 2em;
+    margin-right: 0.5em;
+}
+
+footer {
+    margin-top: 1em;
+    padding: 1em;
+
+    background-color: var(--fg);
+
+    border-style: solid;
+    border-color: white;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#infoProjeto {
+    margin-top: 3em;
+}
+
+/*usado em provas.htm*/
+table {
+    background-color: #305BAB;
+    border-style: solid;
+
+    border-spacing: 0px;
+}
+
+tr,
+td,
+th {
+    border-style: solid;
+    border-width: 2px;
+    padding: 1%;
+
+    margin: auto;
+}
+
+/* usado em index */
+#frase {
+    text-indent: 100px;
+}
+
+/* em assuntos e software */
+#busca {
+    margin-top: 2em;
+    margin-bottom: 1.75em;
+}
+
+h5 {
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}
+
+/* para login e registrar */
+.entrada {
+    margin-bottom: 0.5em;
+    padding: 1em;
+    border-style: solid;
+    border-color: white;
+    border-radius: 1.33em;
+}
+
+#captchaBox {
+    display: flex;
+
+    background-color: var(--fg);
+    height: 8em;
+    border-width: 2px;
+    /*gambiarra*/
+}
+
+#captchaBox img {
+    width: 40%;
+}
+
+#captchaBox input,
+#captchaBox label {
+    margin-left: 0.75em;
+}
+
+/* para logado */
+.verm:link,
+.verm:visited,
+.verm {
+    color: tomato;
+}
+
+li article img {
+    height: 1.6em;
+}
