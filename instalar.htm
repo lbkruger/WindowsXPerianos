@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/instalar.css   "> <!-- css local -->
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.htm">
+            <img class="logo" src="img/logo.webp" alt="Logo do Site">
+            <p class="logo">Windows<br>XPerianos</p>
+        </a>
+        <nav>
+            <a class="colunaNav" href="provas.htm">   Provas</a>
+            <a class="colunaNav" href="assuntos.htm"> Assuntos</a>
+            <a class="colunaNav" href="software.htm"> Software</a>
+            <a class="colunaNav" href="instalar.htm"> Instalar o Windows XP</a>
+            <a class="colunaNav" href="login.htm">
+                <div class="login">
+                    <img src="img/login.svg">
+                    <div>Entrar</div>
+                </div>
+            </a>
+        </nav>
+    </header>
+    <aside>
+        <h3>Índice:</h3>
+        <ol> <!--começar com 0 (css)-->
+            <li><a href="#0">Como instalar o Windows XP em pleno 2026? E com países e a Microsoft banindo-o</a></li>
+            <li><a href="#1">FASE 1: PREPARAÇÃO E SUPERAÇÃO TÉCNICA</a></li>
+            <ol>
+                <li><a href="#10">Lista:</a></li>
+                <li><a href="#11">A Mídia Limpa:</a></li>
+                <li><a href="#12">O "Slipstream" (nLite):</a></li>
+                <li><a href="#13">A Quebra do Padrão GPT:</a></li>
+            </ol>
+
+            <li><a href="#2">FASE 2: DESARMANDO A PLACA-MÃE (BIOS/UEFI)</a></li>
+        </ol>
+    </aside>
+    <main>
+        <div class="titulo" id="0">
+            <h1>Como instalar o Windows XP em pleno 2026?</h1>
+        </div>
+        <p>
+            Para os membros que acompanham o fórum há anos, o cenário atual não é surpresa. 
+            A transição não foi apenas mercadológica; foi estrutural. A união entre as gigantes 
+            de hardware e a Microsoft resultou em um ecossistema projetado para tornar a 
+            computação offline e anônima impossível. Eles não precisam "proibir" o Windows XP por 
+            lei se puderem torná-lo incompatível através de bloqueios de silício e firmware.
+        </p>
+        <p>
+            Recursos como Secure Boot, a remoção do suporte Legacy/CSM nas placas-mãe e a 
+            obrigatoriedade do TPM 2.0 são peças de uma arquitetura de controle. Eles chamam de 
+            "segurança moderna". Nós sabemos que é a garantia de que seu hardware só rodará 
+            sistemas operacionais que reportam dados de telemetria aos servidores deles.
+        </p>
+        <p>
+            Se você decidiu que a sua privacidade e a posse real dos seus dados valem o esforço, 
+            aqui está o guia técnico e sério de como contornar o bloqueio corporativo e instalar o Windows XP hoje.
+        </p>
+
+        <h2 id="1">FASE 1: PREPARAÇÃO E SUPERAÇÃO TÉCNICA</h2>
+        <p>
+            A maior barreira hoje é a arquitetura de armazenamento. O Windows XP foi criado para 
+            se comunicar com discos via padrão IDE, mas as máquinas modernas usam AHCI ou NVMe. Para o 
+            sistema enxergar o seu disco, precisamos injetar os drivers antes mesmo da instalação começar.
+        </p>
+        <ol id="10">
+            <li id="11">
+                <strong>A Mídia Limpa:</strong> Obtenha uma ISO original (MSDN) do Windows XP SP3. Não confie em versões 
+                modificadas por terceiros encontradas em torrents obscuros.
+            </li>
+            <li id="12">
+                <strong>O "Slipstream" (nLite):</strong> Use um computador secundário e o software nLite para modificar a ISO do XP. Você 
+                precisará integrar os drivers SATA/AHCI específicos do chipset da sua placa-mãe diretamente na imagem de instalação.
+            </li>
+            <li id="13">
+                <strong>A Quebra do Padrão GPT:</strong> O Windows XP não compreende tabelas de partição GPT (o padrão forçado pelas placas UEFI). Você 
+                precisará usar um software de gerenciamento de disco em um pendrive bootável (como o Rufus ou GParted) para converter seu 
+                SSD ou HD de GPT para MBR (Master Boot Record).
+            </li>
+        </ol>
+
+        <h2 id="2">FASE 2: DESARMANDO A PLACA-MÃE (BIOS/UEFI)</h2>
+        <p>
+            Esta é a linha de frente. Você precisa desativar as travas que a fabricante instalou para impedir que 
+            sistemas não-assinados digitalmente pela corporação assumam o controle.
+        </p>
+        <ol id="20">
+            <li id="21">Acesse a BIOS da sua máquina (pressionando <i>F2</i> ou <i>DEL</i> durante o boot).</li>
+            <li id="22">
+                <strong>Desative o Secure Boot (Boot Seguro):</strong> 
+                Esta é a chave-mestra. Sem desativar isso, a placa-mãe recusará a assinatura do XP.
+            </li>
+            <li id="23">
+                <strong>Ative o CSM (Compatibility Support Module) / Legacy Mode:</strong> Placas-mãe fabricadas a partir de 2020 começaram a 
+                remover essa opção. Se a sua não possui CSM, você precisará de um hardware ligeiramente mais antigo. O CSM emula 
+                a BIOS tradicional, permitindo que sistemas autônomos deem o boot.
+            </li>
+            <li id="24">
+                <strong>Modo SATA:</strong> Se o "Slipstream" com o nLite não funcionou, procure a configuração SATA e 
+                mude de AHCI para IDE ou Legacy.
+            </li>
+        </ol>
+
+        <h2 id="3">FASE 3: A INSTALAÇÃO PURA</h2>
+        <p>
+            Dê o boot pela mídia gravada. Se você configurou a UEFI corretamente e injetou os drivers, a tela azul de instalação 
+            clássica reconhecerá seu disco rígido.
+        </p>
+        <ol id="30">
+            <li id="31">
+                <strong>Extermínio de Partições:</strong> Delete todas as partições existentes no disco. As partições de sistema EFI criadas por versões 
+                modernas do Windows não podem coexistir com o XP.
+            </li>
+            <li id="32">
+                <strong>Formatação NTFS:</strong> Realize a formatação completa em NTFS para garantir a integridade do disco e 
+                eliminar qualquer vestígio de sistemas anteriores.
+            </li>
+            <li id="33">Mantenha a máquina <strong>estritamente desconectada</strong> de qualquer cabo de rede durante todo o processo.</li>
+        </ol>
+
+        <h2 id="4">FASE 4: O "AIR-GAP" (ISOLAMENTO TÁTICO)</h2>
+        <p>Um sistema soberano só permanece livre se for mantido em um ambiente fechado.</p>
+        <ol id="40">
+            <li id="41">
+                <strong>Não instale drivers de rede modernas (Wi-Fi/Ethernet). <em>Somente os nossos</em></strong> 
+                O Windows XP não foi projetado para suportar o tráfego hostil e a vigilância da internet de hoje.
+            </li>
+            <li id="42">
+                <strong>Transferência de Dados Segura: (OPCIONAL)</strong> 
+                Use a máquina como uma estação de trabalho isolada (air-gapped). Todo trânsito de arquivos (documentos de texto, 
+                planilhas, mídia) deve ser feito exclusivamente via pendrives escaneados previamente em uma 
+                máquina intermediária segura.
+            </li>
+            <li id="43">
+                <strong>Aproveite o Silêncio:</strong> 
+                Você notará que o disco rígido e o processador ficam em repouso absoluto quando você não está fazendo nada. Não há 
+                indexação em segundo plano, não há envio de pacotes de dados, não há IA lendo seus padrões de uso.
+            </li>
+        </ol>
+        <p>Você retomou o controle do seu hardware.</p>
+
+    </main>
+    <hr>
+    <footer>
+        <section class="misc">
+            <article>Misterium Mídia, 2009-2026 todos os direitos reservados.   </article>
+            <article>Doe por Bitcoin: 92nu3512rcnt8orgdvtyfrivnrfeywertv2igy    </article>
+            <article>Doe por Pix: +55 (51) 99677-9703                           </article>
+        </section>
+    
+        <section class="contato">
+            <h3>Contato:</h3>
+            <article><img src="img/email.png"><a href="html">E-Mail:</a><a href="mailto:contato@winxperianos.org">contato@winxperianos.org</a>    </article>
+            <article><img src="img/bluesky.webp"><a href="html">Bluesky:</a><a href="https://bsky.app/profile/winxperianos">@winxperianos</a>         </article>
+            <article><img src="img/telegram.png"><a href="html">Telegram:</a><a href="https://t.me/joinchat/winxperianos">t.me/joinchat/winxperianos</a>       </article>
+        </section>
+    </footer>
+</body>
+
+</html>
